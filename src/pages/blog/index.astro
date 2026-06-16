@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<Layout title="Blog | SSOT">
+	<div class="space-y-12">
+		<div class="text-center space-y-4">
+			<h1 class="text-4xl font-extrabold text-slate-900">The Overflow</h1>
+			<p class="text-slate-600 max-w-xl mx-auto">
+				Deep-dives on daily cloud operations, AI experiments, and architectural lessons learned in the field.
+			</p>
+		</div>
+
+		<div class="space-y-8">
+			{posts.map(post => (
+				<a href={`/blog/${post.slug}`} class="flex flex-col md:flex-row gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:border-blue-500 transition-all group">
+					<div class="md:w-1/4 text-slate-400 text-sm font-mono">
+						{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+					</div>
+					<div class="md:w-3/4">
+						<h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">{post.data.title}</h3>
+						<p class="text-slate-600 line-clamp-2">{post.data.description}</p>
+					</div>
+				</a>
+			))}
+		</div>
+	</div>
+</Layout>
