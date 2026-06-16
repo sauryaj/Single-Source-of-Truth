@@ -1,17 +1,58 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Single Source of Truth | Cloud & AI Guides">
+	<div class="flex flex-col items-center text-center space-y-6 mb-20">
+		<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900">
+			Cloud & AI <span class="text-blue-600">Simplified.</span>
+		</h1>
+		<p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+			Guides, practice exams, and free tools to help you navigate the complexity of modern infrastructure. 
+			Stop guessing, start mastering.
+		</p>
+		<div class="flex flex-wrap justify-center gap-4">
+			<a href="/study-guides" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">
+				Browse Study Guides →
+			</a>
+			<a href="/wiki" class="bg-white text-slate-900 border border-slate-200 px-8 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+				Explore Wiki
+			</a>
+		</div>
+	</div>
+
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+		<!-- Card 1 -->
+		<a href="/study-guides" class="group p-8 bg-white border border-slate-200 rounded-2xl hover:border-blue-400 hover:shadow-xl transition-all text-left">
+			<div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.42 9.568 5 8.4 5S4.832 5.42 4.832 6.253v13C4.832 22.58 6.832 23 8.4 23s3.568-.42 3.568-1.253m4.2 1.253v-13C15.168 5.42 13.898 5 12.6 5s-3.568.42-3.568 1.253" />
+				</svg>
+			</div>
+			<h3 class="text-xl font-bold text-slate-900 mb-2">Study Guides</h3>
+			<p class="text-slate-600">Every exam objective mapped to official resources with simplified explanations.</p>
+		</a>
+
+		<!-- Card 2 -->
+		<a href="/exams" class="group p-8 bg-white border border-slate-200 rounded-2xl hover:border-blue-400 hover:shadow-xl transition-all text-left">
+			<div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-600 group-hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+			</div>
+			<h3 class="text-xl font-bold text-slate-900 mb-2">Practice Exams</h3>
+			<p class="text-slate-600">Real-world questions with instant feedback and domain-specific breakdowns.</p>
+		</a>
+
+		<!-- Card 3 -->
+		<a href="/wiki" class="group p-8 bg-white border border-slate-200 rounded-2xl hover:border-blue-400 hover:shadow-xl transition-all text-left">
+			<div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m0 0l5 5m-5-5l5-5" />
+				</svg>
+			</div>
+			<h3 class="text-xl font-bold text-slate-900 mb-2">Licensing Wiki</h3>
+			<p class="text-slate-600">Complex cloud licensing explained in plain English. Stop guessing your plans.</p>
+		</a>
+	</div>
+</Layout>
