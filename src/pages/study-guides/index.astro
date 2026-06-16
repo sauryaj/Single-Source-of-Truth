@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('study-guides');
+---
+
+<Layout title="Study Guides | SSOT">
+	<div class="space-y-12">
+		<div class="text-center space-y-4">
+			<h1 class="text-4xl font-extrabold text-slate-900">Study Guides</h1>
+			<p class="text-slate-600 max-w-xl mx-auto">
+				Comprehensive breakdowns of certification objectives. Simplified explanations, official links, and curated resources.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			{guides.map(guide => (
+				<a href={`/study-guides/${guide.slug}`} class="p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all group">
+					<div class="flex justify-between items-start mb-2">
+						<h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{guide.data.title}</h3>
+						<span class="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded">{guide.data.examCode}</span>
+					</div>
+					<p class="text-slate-600 text-sm line-clamp-2">{guide.data.description}</p>
+				</a>
+			))}
+		</div>
+	</div>
+</Layout>
