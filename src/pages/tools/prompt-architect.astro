@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PromptArchitect from '../../components/tools/PromptArchitect';
+---
+
+<Layout title="Prompt Architect | SSOT Tools">
+	<div class="max-w-3xl mx-auto space-y-8">
+		<header class="text-center space-y-4">
+			<div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase tracking-wider">
+				Free Utility
+			</div>
+			<h1 class="text-4xl font-extrabold text-slate-900">AI Prompt Architect</h1>
+			<p class="text-slate-600">Stop guessing. Build structured, high-performance system prompts using the Role-Task-Constraint framework.</p>
+		</header>
+
+		<div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-xl shadow-slate-100">
+			<PromptArchitect client:load />
+		</div>
+
+		<div class="text-center p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+			<p class="text-sm text-slate-500">
+				This tool runs entirely in your browser. No data is sent to any server.
+			</p>
+		</div>
+	</div>
+</Layout>
