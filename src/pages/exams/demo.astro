@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ExamEngine from '../../components/ExamEngine';
+
+// Mock data for the demonstration. In a real scenario, this could come from a JSON file or API.
+const mockQuestions = [
+  {
+    id: 1,
+    text: "Which Azure service is best for hosting a highly scalable, serverless API?",
+    options: ["Azure Virtual Machines", "Azure Functions", "Azure App Service", "Azure Container Instances"],
+    correctAnswer: 1,
+    explanation: "Azure Functions provides an event-driven, serverless compute experience that scales automatically."
+  },
+  {
+    id: 2,
+    text: "What is the primary purpose of Azure Resource Manager (ARM)?",
+    options: ["To manage virtual machine CPU cores", "To provide a deployment template for resource orchestration", "To store user passwords", "To create DNS records"],
+    correctAnswer: 1,
+    explanation: "ARM templates allow you to define and deploy your infrastructure as code consistently."
+  },
+  {
+    id: 3,
+    text: "In Azure AD (Entra ID), what is a Conditional Access policy?",
+
+    options: ["A rule that determines if a user is an administrator", "A policy that grants access based on specific signals (e.g., location, device)", "A way to reset passwords automatically", "A method to create new users"],
+    correctAnswer: 1,
+    explanation: "Conditional Access uses signals to make decisions about granting access to resources."
+  }
+];
+---
+
+<Layout title="Practice Exam | SSOT">
+	<div class="max-w-3xl mx-auto space-y-8">
+		<header class="text-center space-y-4">
+			<h1 class="text-4xl font-extrabold text-slate-900">AZ-104 Practice Exam</h1>
+			<p class="text-slate-600">Test your knowledge with real-world scenarios. Instant feedback provided.</p>
+		</header>
+
+		<ExamEngine 
+			client:load 
+			examTitle="AZ-104: Azure Administrator" 
+			questions={mockQuestions} 
+		/>
+
+		<div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 flex items-start gap-4">
+			<div class="text-blue-600">
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+			</div>
+			<div>
+				<h4 class="font-bold text-blue-900">Pro Tip</h4>
+				<p class="text-blue-800 text-sm">Focus on the 'Explanation' after each answer. Understanding the 'Why' is more important than just getting the 'Right' answer.</p>
+			</div>
+		</div}
+	</div>
+</Layout>
